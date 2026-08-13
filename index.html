@@ -17,7 +17,7 @@
     <meta property="og:title" content="K-Tech PowerGuard | Mac Battery & Power Alerts">
     <meta property="og:description" content="Smart menu bar battery alerts for MacBook Neo. Neo colors, glass UI, charging history. Free for all Mac.">
     <meta property="og:url" content="https://powerguard-lp.vercel.app/">
-    <meta property="og:image" content="https://powerguard-lp.vercel.app/images/hero.jpg">
+    <meta property="og:image" content="https://powerguard-lp.vercel.app/images/settings.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23454aad'/><rect x='28' y='22' width='36' height='56' rx='6' fill='none' stroke='%23a8e06c' stroke-width='5'/><rect x='38' y='38' width='16' height='28' rx='2' fill='%23a8e06c'/></svg>">
 
@@ -179,212 +179,24 @@
             border: 1px solid var(--mac-border);
         }
 
-        /* Mac mock */
-        .mac-mock {
-            max-width: 880px;
+        /* Hero screenshot */
+        .hero-shot {
+            max-width: 720px;
             margin: 0 auto;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid var(--mac-border);
-            box-shadow: var(--shadow);
-            text-align: left;
-        }
-
-        .menubar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 16px;
-            background: rgba(40, 40, 42, 0.95);
-            backdrop-filter: blur(20px);
-            font-size: 0.72rem;
-            color: var(--mac-muted);
-            border-bottom: 1px solid var(--mac-border);
-        }
-
-        .menubar-left { display: flex; gap: 14px; align-items: center; }
-        .menubar-right { display: flex; gap: 12px; align-items: center; }
-
-        .battery-pill {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 3px 8px;
-            border-radius: 6px;
-            background: rgba(48, 209, 88, 0.15);
-            color: var(--charge-green);
-            font-weight: 600;
-        }
-
-        .battery-icon {
-            width: 22px;
-            height: 11px;
-            border: 1.5px solid currentColor;
-            border-radius: 2px;
-            position: relative;
-            padding: 1px;
-        }
-
-        .battery-icon::after {
-            content: "";
-            position: absolute;
-            right: -4px;
-            top: 2px;
-            width: 2px;
-            height: 5px;
-            background: currentColor;
-            border-radius: 0 1px 1px 0;
-        }
-
-        .battery-fill {
-            height: 100%;
-            width: 72%;
-            background: currentColor;
-            border-radius: 1px;
-        }
-
-        .mac-screen {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            min-height: 300px;
-            background: linear-gradient(145deg, #1a1a1c, #0f0f11);
-        }
-
-        .desktop-area {
-            padding: 24px;
-            position: relative;
-        }
-
-        .neo-wallpaper {
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 30% 40%, rgba(115, 107, 210, 0.25), transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(48, 209, 88, 0.08), transparent 40%);
-            pointer-events: none;
-        }
-
-        .notification {
-            position: relative;
-            z-index: 1;
-            max-width: 340px;
-            margin: 40px auto 0;
-            background: rgba(44, 44, 46, 0.92);
-            backdrop-filter: blur(24px);
-            border: 1px solid var(--mac-border);
-            border-radius: 14px;
-            padding: 14px 16px;
-            display: flex;
-            gap: 12px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .notif-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, var(--neo-indigo), #5b52a8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .notif-body strong {
-            display: block;
-            font-size: 0.82rem;
-            margin-bottom: 2px;
-        }
-
-        .notif-body span {
-            font-size: 0.75rem;
-            color: var(--mac-muted);
-        }
-
-        .settings-panel {
-            background: rgba(36, 36, 38, 0.88);
-            backdrop-filter: blur(20px);
-            border-left: 1px solid var(--mac-border);
-            padding: 16px;
-            font-size: 0.78rem;
-        }
-
-        .settings-panel h4 {
-            margin: 0 0 12px;
-            font-size: 0.85rem;
-            color: var(--mac-text);
-        }
-
-        .neo-swatches {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .swatch {
-            aspect-ratio: 1;
-            border-radius: 10px;
-            border: 2px solid transparent;
-            cursor: default;
-        }
-
-        .swatch.active { border-color: #fff; box-shadow: 0 0 0 2px var(--neo-indigo); }
-        .swatch.silver { background: linear-gradient(135deg, #e8e8ea, #a8a8ad); }
-        .swatch.blush { background: linear-gradient(135deg, #fce4e6, #d98c94); }
-        .swatch.citrus { background: linear-gradient(135deg, #faf6d8, #c7b838); }
-        .swatch.indigo { background: linear-gradient(135deg, #e8e6f8, #736bd2); }
-
-        .glass-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 14px;
-        }
-
-        .glass-chip {
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            font-size: 0.68rem;
-            color: var(--mac-muted);
-        }
-
-        .glass-chip.on {
-            background: rgba(115, 107, 210, 0.35);
-            color: #e9d5ff;
-        }
-
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-top: 1px solid var(--mac-border);
-            color: var(--mac-muted);
-        }
-
-        .stat-row strong { color: var(--charge-green); }
-
-        /* Screenshot */
-        .shot-section {
-            padding: 72px 0;
-            background: #0a0a0c;
-        }
-
-        .shot-frame {
             border-radius: 16px;
             overflow: hidden;
-            border: 1px solid var(--mac-border);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             box-shadow: var(--shadow);
+            background: rgba(28, 28, 30, 0.6);
         }
 
-        .shot-frame img {
+        .hero-shot img {
             width: 100%;
             display: block;
+            vertical-align: middle;
         }
 
-        .shot-caption {
+        .hero-shot-caption {
             text-align: center;
             margin-top: 14px;
             color: var(--mac-muted);
@@ -491,8 +303,7 @@
         }
 
         @media (max-width: 720px) {
-            .mac-screen { grid-template-columns: 1fr; }
-            .settings-panel { border-left: none; border-top: 1px solid var(--mac-border); }
+            .hero-shot { border-radius: 12px; }
         }
     </style>
 </head>
@@ -530,77 +341,15 @@
                 <a href="https://github.com/crossbeat461-a11y/K-Tech-PowerGuard" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
             </div>
 
-            <div class="mac-mock" aria-hidden="true">
-                <div class="menubar">
-                    <div class="menubar-left">
-                        <span>🍎</span>
-                        <span>Finder</span>
-                        <span>Obsidian</span>
-                    </div>
-                    <div class="menubar-right">
-                        <span>Wed 14:32</span>
-                        <div class="battery-pill">
-                            <div class="battery-icon"><div class="battery-fill"></div></div>
-                            72% ⚡
-                        </div>
-                    </div>
-                </div>
-                <div class="mac-screen">
-                    <div class="desktop-area">
-                        <div class="neo-wallpaper"></div>
-                        <div class="notification">
-                            <div class="notif-icon">🔋</div>
-                            <div class="notif-body">
-                                <strong class="lang-ja">K-Tech PowerGuard — 充電 80% に到達</strong>
-                                <strong class="lang-en">K-Tech PowerGuard — Reached 80% while charging</strong>
-                                <span class="lang-ja">コンセントを外すタイミングかもしれません</span>
-                                <span class="lang-en">Consider unplugging to protect battery health</span>
-                            </div>
-                        </div>
-                    </div>
-                    <aside class="settings-panel">
-                        <h4 class="lang-ja">表示 · Neo · ガラス</h4>
-                        <h4 class="lang-en">Appearance · Neo · Glass</h4>
-                        <div class="neo-swatches">
-                            <div class="swatch silver" title="Silver"></div>
-                            <div class="swatch blush" title="Blush"></div>
-                            <div class="swatch citrus" title="Citrus"></div>
-                            <div class="swatch indigo active" title="Indigo"></div>
-                        </div>
-                        <div class="glass-row">
-                            <span class="glass-chip">Off</span>
-                            <span class="glass-chip">Light</span>
-                            <span class="glass-chip">Medium</span>
-                            <span class="glass-chip on">Strong</span>
-                            <span class="glass-chip on">Max</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="lang-ja">今日の駆動</span>
-                            <span class="lang-en">On battery today</span>
-                            <strong>4h 12m</strong>
-                        </div>
-                        <div class="stat-row">
-                            <span class="lang-ja">今日の充電</span>
-                            <span class="lang-en">Charging today</span>
-                            <strong>1h 08m</strong>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="shot-section">
-        <div class="container">
-            <div class="shot-frame">
-                <img src="images/hero.jpg" alt="K-Tech PowerGuard settings on Mac" width="1200" height="630" loading="lazy" decoding="async">
-            </div>
-            <p class="shot-caption">
-                <span class="lang-ja">タブ式設定 · 一般 / 履歴 / 表示 — 13インチでも見やすい UI</span>
-                <span class="lang-en">Tabbed Settings — General / History / Appearance, compact for 13-inch screens</span>
+            <figure class="hero-shot">
+                <img src="images/settings.png" alt="K-Tech PowerGuard Settings — General tab with battery thresholds" width="1024" height="839" loading="eager" decoding="async">
+            </figure>
+            <p class="hero-shot-caption">
+                <span class="lang-ja">タブ式設定 · 一般 / 履歴 / 表示 — MacBook Neo テーマ</span>
+                <span class="lang-en">Tabbed Settings — General / History / Appearance · MacBook Neo theme</span>
             </p>
         </div>
-    </section>
+    </header>
 
     <section class="section-light">
         <div class="container">
